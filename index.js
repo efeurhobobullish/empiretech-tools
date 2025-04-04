@@ -1,15 +1,20 @@
 ///====================[ Ai ]============\\
-const { igstorydl } = require('./tools/dowload/igstorydl.js')
+const { igstorydl } = require('./tools/download/igstorydl.js')
 const { twitterdl } = require('./tools/download/twitterdl.js')
 const { tiktokdl } = require('./tools/download/tiktokdl.js')
-const { telesticker } = require('./tools/download/telesticker.js')
-const { ssweb } = require('./tools/download/ssweb.js')
-const { playstore } = require('./tools/download/playstore.ja')
+const { telesticker } = require('./tools/search/telesticker.js')
+const { ssweb } = require('./tools/search/ssweb.js')
+const { playstore } = require('./tools/search/playstore.js')
 const { wagroupstalk } = require('./tools/stalker/wagroupstalk.js')
-const { gitstalk } = require('./tools/stalker/gitstalk.ks')
+const { gitstalk } = require('./tools/stalker/gitstalk.js')
+const { fbdl } = require('./tools/download/fbdl.js')
+const { igdl } = require('./tools/download/igdl.js')
+const { web2mp4File } = require('./tools/converter/web2mp4File.js')
+
 
 module.exports.igdl= igdl;
 module.exports.fbdl= fbdl;
+module.exports.web2mp4File= web2mp4File
 module.exports.telesticker = telesticker;
 module.exports.ssweb = ssweb;
 module.exports.playstore= playstore;

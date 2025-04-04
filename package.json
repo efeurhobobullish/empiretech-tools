@@ -1,6 +1,6 @@
 {
   "name": "empiretech-tools",
-  "version": "0.0.1",
+  "version": "0.0.6",
   "description": "Free scraper tools including Toanime, Tozombie, Remini/Upscale, and more.",
   "main": "index.js",
   "keywords": [
@@ -20,12 +20,11 @@
     "url": "git+https://github.com/efeurhobobullish/empiretech-tools.git"
   },
   "dependencies": {
-    "axios": "^1.4.0",
+    "axios": "^1.8.4",
     "cheerio": "^1.0.0",
-    "form-data": "^4.0.0",
+    "form-data": "^4.0.2",
     "jimp": "^0.22.8"
   },
-  "devDependencies": {},
   "bugs": {
     "url": "https://github.com/efeurhobobullish/empiretech-tools/issues"
   },
