@@ -7,6 +7,7 @@ const { titokdl } = require('./tools/download/tiktokdl.js')
 const { twitterdl } = require('./tools/download/twitterdl.js')
 const { gitstalk } = require('./tools/stalker/gitstalk.js')
 const { tgstalk } = require('./tools/stalker/tgstalk.js')
+const { ffstalk } = require('./tools/stalker/ffstalk.js')
 
 module.exports.igdl= igdl;
 module.exports.igstorydl= igstorydl;
@@ -16,3 +17,4 @@ module.exports.titokdl = titokdl;
 module.exports.twitterdl= twitterdl;
 module.exports.tgstalk = tgstalk;
 module.exports.gitstalk = gitstalk;
+module.exports.ffstalk = ffstalk;
