@@ -1,8 +1,6 @@
 const axios = require('axios');
 const cheerio = require('cheerio');
 
-const axios = require("axios");
-
 async function shortener(url) {
   try {
     const res = await axios.get(`https://tinyurl.com/api-create.php?url=${encodeURIComponent(url)}`);
