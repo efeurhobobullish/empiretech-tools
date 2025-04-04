@@ -89,10 +89,31 @@ beta.igstorydl(user)
 ## ```IG Stalk```
 ``` 
 const beta = require('empiretech-tools ');
-const user = 'efeurhobobullish'
+const user = 'only_one__empire';
+
+beta.tgstalk(user)
+    .then(result => {
+     console.log(result)
+});
+```
+## ```TG STALK```
+```
+const beta = require('empiretech-tools ');
+const user = 'only_one_empire';
 
 beta.gitstalk(user)
     .then(result => {
      console.log(result)
 });
+```
+## ```RESULT```
+```
+{
+  creator: 'Empire Tech',
+  name: '𝖤𝗆𝗉𝗂𝗋𝖾 𝖳𝖾𝖼𝗁',
+  username: 'only_one_empire',
+  bio: 'Website developer, Graphics Designer 🔥 ,Telegram Bots Developer etc.',
+  avatar: 'https://cdn4.cdn-telegram.org/file/sREFQH-r56r-3Q3AyX36w84yDReQP0JZgtqE6GBPitL6lHLyeUM5RPUPxUkugTqdU3gjMwWaL3zdBHvjgVuOKb-FoL5ohUfkoFgPPyGsqhmZRgFLYsgUkkgz9mc9LDujw_UBcuII_Tj_0Ee_jeL98RuZMtzSVwzv_k39M9hVnmkKnRwGnJJkvEtzug0FGaPDjf3Zb6A89cCriTznglaLYnh40wLQFn-NRmCKtfW58wQ821RrDkQilkvhKm7sWXSpqDA1S2j7rvID5UU4pBhYMJ52vySg_HL1oNpUmjHMdmnsvtW-c5Vbde93IuNaVoUY3D5Sf9cOCK__x92PnQZS-w.jpg',
+  link: 'https://t.me/only_one_empire'
+}
 ```
