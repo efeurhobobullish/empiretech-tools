@@ -1,8 +1,23 @@
 const axios = require('axios');
 const cheerio = require('cheerio');
 
+const axios = require("axios");
+
+async function shortener(url) {
+  try {
+    const res = await axios.get(`https://tinyurl.com/api-create.php?url=${encodeURIComponent(url)}`);
+    return res.data;
+  } catch (err) {
+    return url; // fallback to original URL on failure
+  }
+}
+
+function clean(text) {
+  return text.replace(/<\/?[^>]+(>|$)/g, "").trim(); // remove HTML tags
+}
+
 async function tiktokdl(url) {
-  let response = await axios({
+  const response = await axios({
     url: "https://lovetik.com/api/ajax/search",
     method: "POST",
     headers: {
