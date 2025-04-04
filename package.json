@@ -1,6 +1,6 @@
 {
   "name": "empiretech-tools",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Free scraper tools including Toanime, Tozombie, Remini/Upscale, and more.",
   "main": "index.js",
   "keywords": [
