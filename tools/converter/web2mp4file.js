@@ -3,7 +3,7 @@ const axios = require('axios');
 const cheerio = require('cheerio');
 const BodyForm = require('form-data');
 
-function webp2mp4File(path) {
+function webp2mp4file(path) {
 	return new Promise((resolve, reject) => {
 		 const form = new BodyForm()
 		 form.append('new-image-url', '')
@@ -40,4 +40,4 @@ function webp2mp4File(path) {
 		 }).catch(reject)
 	});
 }
-module.exports = { web2mp4File }
+module.exports = { web2mp4file }

@@ -9,12 +9,11 @@ const { wagroupstalk } = require('./tools/stalker/wagroupstalk.js')
 const { gitstalk } = require('./tools/stalker/gitstalk.js')
 const { fbdl } = require('./tools/download/fbdl.js')
 const { igdl } = require('./tools/download/igdl.js')
-const { web2mp4File } = require('./tools/converter/web2mp4File.js')
-
+const { web2mp4file } = require('./tools/converter/web2mp4file.js')
 
 module.exports.igdl= igdl;
 module.exports.fbdl= fbdl;
-module.exports.web2mp4File= web2mp4File
+module.exports.web2mp4file= web2mp4file;
 module.exports.telesticker = telesticker;
 module.exports.ssweb = ssweb;
 module.exports.playstore= playstore;
