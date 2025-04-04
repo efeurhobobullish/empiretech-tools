@@ -1,29 +1,33 @@
 {
   "name": "empiretech-scraper",
   "version": "0.0.1",
-  "description": "Scraper Free To Use ( Toanime,Tozombie,Remini/Upscale, Etc )",
+  "description": "Free scraper tools including Toanime, Tozombie, Remini/Upscale, and more.",
   "main": "index.js",
+  "keywords": [
+    "scraper",
+    "ai",
+    "remini",
+    "tiktokdl",
+    "empiretech"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [
-    "ai",
-    "remini",
-    "threadsdl",
-    "tiktokdl",
-    "twitterdl"
-  ],
   "author": "Empire Tech",
   "license": "MIT",
-  "dependencies": {
-    "axios": "^1.4.0",
-    "cheerio": "1.0.0",
-    "form-data": "^4.0.0",
-     "jimp": "^0.22.8"
-  },
-  "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "https://github.com/efeurhobobullish/empiretech-scraper.git"
-  }
+    "url": "git+https://github.com/efeurhobobullish/empiretech-scraper.git"
+  },
+  "dependencies": {
+    "axios": "^1.4.0",
+    "cheerio": "^1.0.0",
+    "form-data": "^4.0.0",
+    "jimp": "^0.22.8"
+  },
+  "devDependencies": {},
+  "bugs": {
+    "url": "https://github.com/efeurhobobullish/empiretech-scraper/issues"
+  },
+  "homepage": "https://github.com/efeurhobobullish/empiretech-scraper#readme"
 }
