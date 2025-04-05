@@ -34,7 +34,7 @@ const tiktokdl = {
       });
 
       return {
-        creator: 'Empire Tech',
+        Creator: 'Empire Tech',
         thumbnail,
         title,
         downloadLinks
