@@ -1,39 +1,61 @@
 const axios = require('axios');
 const cheerio = require('cheerio');
+const qs = require('qs');
 
-async function shortener(url) {
-  try {
-    const res = await axios.get(`https://tinyurl.com/api-create.php?url=${encodeURIComponent(url)}`);
-    return res.data;
-  } catch (err) {
-    return url; // fallback to original URL on failure
+const tiktokdl = {
+  getData: async (url) => {
+    const apiUrl = 'https://tiksave.io/api/ajaxSearch';
+    const data = qs.stringify({
+      q: url,
+      lang: 'id'
+    });
+    const config = {
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+        'Accept': '*/*',
+        'User-Agent': 'MyApp/1.0',
+        'Referer': 'https://tiksave.io/en',
+        'X-Requested-With': 'XMLHttpRequest'
+      }
+    };
+
+    try {
+      const response = await axios.post(apiUrl, data, config);
+      const html = response.data.data;
+      const $ = cheerio.load(html);
+      const thumbnail = $('.thumbnail img').attr('src');
+      const title = $('.tik-left h3').text().trim();
+      const downloadLinks = [];
+
+      $('.dl-action a').each((index, element) => {
+        const link = $(element).attr('href');
+        const label = $(element).text().trim();
+        downloadLinks.push({ label, link });
+      });
+
+      return {
+        thumbnail,
+        title,
+        downloadLinks
+      };
+    } catch (error) {
+      console.error('Error:', error);
+      return { success: false, message: error.message };
+    }
+  },
+  download: async (url) => {
+    try {
+      const videoData = await tiktokdl.getData(url);
+      if (videoData && videoData.downloadLinks.length) {
+        const audioUrl = videoData.downloadLinks.find(link => link.label === 'Download MP3')?.link;
+
+        return JSON.stringify(videoData, null, 2);
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      return { success: false, message: error.message };
+    }
   }
-}
-
-function clean(text) {
-  return text.replace(/<\/?[^>]+(>|$)/g, "").trim(); // remove HTML tags
-}
-
-async function tiktokdl(url) {
-  const response = await axios({
-    url: "https://lovetik.com/api/ajax/search",
-    method: "POST",
-    headers: {
-      "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
-    },
-    data: new URLSearchParams({ query: url }),
-  });
-
-  const result = {};
-  result.creator = "Empire Tech";
-  result.title = clean(response.data.desc);
-  result.author = clean(response.data.author);
-  result.nowm = await shortener((response.data.links[0].a || "").replace("https", "http"));
-  result.watermark = await shortener((response.data.links[1].a || "").replace("https", "http"));
-  result.audio = await shortener((response.data.links[2].a || "").replace("https", "http"));
-  result.thumbnail = await shortener(response.data.cover);
-
-  return result;
-}
+};
 
 module.exports = { tiktokdl };
